@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Embedded CSS */
+        #login-page {
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-page {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .role-select {
+            width: 85%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+        }
+
+        .login-options input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 85%;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body id="login-page">
+    <div class="login-page">
+        <h2>Login</h2>
+        <form id="login-form" action="/" method="post">
+            <select id="role" class="role-select" name="role">
+                <option value="customer">Customer</option>
+                <option value="admin">Admin</option>
+            </select>
+            <div class="login-options">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit" id="login-btn">Login</button>
+            </div>
+        </form>
+        <!-- Login as Customer button: added a link to redirect to feedback page -->
+        <a href="/feedback"><button type="button">Login As Customer</button></a>
+        <p id="message"></p>
+    </div>
+</body>
+</html>

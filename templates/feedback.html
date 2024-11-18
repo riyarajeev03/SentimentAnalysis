@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <!-- Use url_for to reference CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <!-- Use url_for to reference video file -->
+        <video autoplay muted loop id="background-video">
+            <source src="{{ url_for('static', filename='videos/foodvid.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1 style="font-family: 'Lobster', cursive;">Kazhikooo Asvadikoo</h1>
+            <p>Experience the finest dining with our curated menu.</p>
+        </div>
+
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <p>Explore our delicious offerings.</p>
+        <div class="menu-grid">
+            <!-- Use url_for to reference image files -->
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/pizza.jpg') }}" alt="Pizza">
+                <h3>Margherita Pizza</h3>
+                <p>Classic Italian pizza with fresh mozzarella and basil.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/burger.jpg') }}" alt="Burger">
+                <h3>Cheeseburger</h3>
+                <p>Juicy beef patty with melted cheese and fresh veggies.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/pasta.jpg') }}" alt="Pasta">
+                <h3>Spaghetti Carbonara</h3>
+                <p>Rich and creamy pasta with pancetta and parmesan.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/salad.jpg') }}" alt="Salad">
+                <h3>Caesar Salad</h3>
+                <p>Crisp romaine lettuce with creamy Caesar dressing.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/soup.jpg') }}" alt="Soup">
+                <h3>Tomato Basil Soup</h3>
+                <p>Rich and creamy soup made with fresh tomatoes and basil.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/steak.jpg') }}" alt="Steak">
+                <h3>Grilled Ribeye Steak</h3>
+                <p>Perfectly cooked ribeye with garlic butter.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/sushi.jpg') }}" alt="Sushi">
+                <h3>Assorted Sushi Platter</h3>
+                <p>A variety of fresh sushi rolls and sashimi.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/dessert.jpg') }}" alt="Dessert">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Decadent chocolate cake with a gooey molten center.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Kazhikooo Asvadikoo, where culinary excellence meets warm hospitality. Founded with a passion for exceptional dining, we are dedicated to crafting memorable experiences for our guests. Our chefs use the finest ingredients to create dishes that celebrate the art of cooking, blending traditional recipes with innovative techniques. Whether you're here for a family dinner, a romantic evening, or a special celebration, our inviting ambiance and attentive service ensure every visit is unforgettable.
+        </p>
+    </section>
+
+    <section id="feedback">
+        <div class="feedback-container">
+            <h1>We Value Your Feedback</h1>
+            <p>Tell us how we can improve! Your feedback helps us enhance our services and provide you with the best experience. Please fill out the form below to share your thoughts with us.</p>
+            
+            <form action="/feedback" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                <br>
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" required placeholder="Write your feedback here..."></textarea>
+                <br>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

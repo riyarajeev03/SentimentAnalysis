@@ -1,0 +1,5 @@
+Flask
+azure-ai-textanalytics
+azure-core
+azure-storage-blob
+pytz
